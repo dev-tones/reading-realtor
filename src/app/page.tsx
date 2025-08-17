@@ -12,7 +12,6 @@ import {
   MapPinIcon as MapPin, 
   PhoneIcon as Phone, 
   EnvelopeIcon as Mail,  
-  UsersIcon as Users, 
   HomeIcon as Home, 
   CheckCircleIcon as CheckCircle, 
   ArrowRightIcon as ArrowRight, 
