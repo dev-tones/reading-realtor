@@ -1,7 +1,6 @@
 'use client';
 
 // page.tsx - Realtor Landing Page
-
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { TestimonialCard, testimonials } from './components/TestimonialCard';
@@ -75,63 +74,65 @@ export default function RealtorLandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Your Dream Home
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  Awaits
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {"With over 15 years of experience in luxury real estate, I help clients find their perfect home and maximize their property investments in today\'s dynamic market."}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
-                  Start Your Journey
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
-                  View Properties
-                </button>
-              </div>
+      <section id="home" className="pt-16 min-h-[85svh] sm:min-h-screen flex items-center relative overflow-hidden scroll-mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-3'}`}>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
+              Your Dream Home
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Awaits
+              </span>
+            </h1>
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              {"With over 15 years of experience in luxury real estate, I help clients find their perfect home and maximize their property investments in today\'s dynamic market."}
+            </p>
+
+            {/* mobile-first buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-0">
+              <button className="group w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
+                View Properties
+              </button>
             </div>
-            
-            <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="relative">
-                <Image 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600" 
-                  alt="Luxury Home"
-                  className="rounded-3xl shadow-2xl"
-                />
-                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-6 h-6 text-green-600" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900">Just Sold!</p>
-                      <p className="text-sm text-gray-600">$1.2M in 3 days</p>
-                    </div>
-                  </div>
+          </div>
+
+          {/* Responsive image: fill + aspect, or width/height */}
+          <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-3'}`}>
+             <div className="relative w-full aspect-[4/3] lg:max-w-[560px] lg:ml-auto">
+              <Image
+                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&q=80"
+                alt="Luxury Home"
+                fill
+                className="rounded-3xl shadow-2xl object-cover"
+                priority
+                sizes="(min-width:1280px) 560px, (min-width:1024px) 520px, 100vw"
+              />
+            </div>
+
+            <div className="absolute -bottom-6 -left-3 sm:-left-6 bg-white p-4 sm:p-6 rounded-2xl shadow-xl">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Just Sold!</p>
+                  <p className="text-sm text-gray-600">$1.2M in 3 days</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-gray-400" />
-        </div>
+        {/* ... */}
       </section>
 
+
       {/* Stats Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, index) => (
               <StatCard key={index} {...stat} />
             ))}
@@ -140,14 +141,16 @@ export default function RealtorLandingPage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+      <section id="about" className="py-12 sm:py-20 bg-gradient-to-r from-blue-50 to-purple-50 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="relative w-full max-w-xl mx-auto lg:mx-0 aspect-[4/3]">
               <Image
-                src=""
+                src="/jennifer.jpg"
                 alt="Jennifer Twigg"
-                className="rounded-3xl shadow-2xl"
+                fill
+                className="rounded-3xl shadow-2xl object-cover"
+                sizes="(min-width:1024px) 560px, 100vw"
               />
             </div>
             <div>
@@ -171,7 +174,7 @@ export default function RealtorLandingPage() {
                   <span className="text-gray-700">$50M+ in sales annually</span>
                 </div>
               </div>
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-0">
                 <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">
                   Learn More
                 </button>
@@ -185,7 +188,7 @@ export default function RealtorLandingPage() {
       </section>
 
       {/* Featured Properties */}
-      <section id="properties" className="py-20 bg-white">
+      <section id="properties" className="py-12 sm:py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Properties</h2>
@@ -194,13 +197,11 @@ export default function RealtorLandingPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProperties.map((property, index) => (
-              <PropertyCard key={index} {...property} />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {featuredProperties.map((p, i) => <PropertyCard key={i} {...p} />)}
           </div>
           
-          <div className="text-center mt-12">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-0">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
               View All Properties
             </button>
@@ -209,7 +210,7 @@ export default function RealtorLandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
+      <section id="testimonials" className="py-12 sm:py-20 bg-gradient-to-r from-gray-50 to-blue-50 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
@@ -218,7 +219,7 @@ export default function RealtorLandingPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard key={index} {...testimonial} />
             ))}
@@ -227,7 +228,7 @@ export default function RealtorLandingPage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section id="contact" className="py-12 sm:py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
@@ -260,7 +261,7 @@ export default function RealtorLandingPage() {
             </div>
           </div>
           
-          <div className="text-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-0">
             <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 inline-flex items-center">
               Schedule Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -272,7 +273,7 @@ export default function RealtorLandingPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">

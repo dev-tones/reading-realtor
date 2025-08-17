@@ -54,6 +54,8 @@ const PropertyCard = ({ image, price, address, beds, baths, sqft, status }: Prop
     <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
       <div className="relative overflow-hidden">
         <Image 
+          width={400}
+          height={400}
           src={image} 
           alt={address}
           className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"

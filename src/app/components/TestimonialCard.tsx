@@ -45,6 +45,8 @@ const TestimonialCard = ({ name, role, content, avatar, rating }: TestimonialPro
     <p className="text-gray-700 mb-6 italic">{content}</p>
     <div className="flex items-center">
       <Image 
+        height={100}
+        width={100}
         src={avatar} 
         alt={name} 
         className="w-12 h-12 rounded-full mr-4" 
