@@ -50,24 +50,24 @@ const PropertyCard = ({ image, price, address, beds, baths, sqft, status }: Prop
   };
 
     return(
-    <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-      <div className="relative overflow-hidden">
+    <div className='group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2'>
+      <div className='relative overflow-hidden'>
         <img 
           src={image} 
           alt={address}
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+          className='w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700'
         />
         <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-white text-sm font-semibold ${statusColors[status]}`}>
           {status.charAt(0).toUpperCase() + status.slice(1)}
         </div>
       </div>
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">{price}</h3>
-        <p className="text-gray-600 mb-4 flex items-center">
-          <MapPin className="w-4 h-4 mr-2 text-blue-500" />
+      <div className='p-6'>
+        <h3 className='text-2xl font-bold text-gray-900 mb-2'>{price}</h3>
+        <p className='text-gray-600 mb-4 flex items-center'>
+          <MapPin className='w-4 h-4 mr-2 text-blue-500' />
           {address}
         </p>
-        <div className="flex justify-between text-sm text-gray-500">
+        <div className='flex justify-between text-sm text-gray-500'>
           <span>{beds} beds</span>
           <span>{baths} baths</span>
           <span>{sqft} sqft</span>
