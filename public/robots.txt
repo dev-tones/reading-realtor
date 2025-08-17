@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block any admin or private areas
+Disallow: /admin/
+Disallow: /api/private/
+
+Sitemap: https://your-realtor-site.com/sitemap.xml
