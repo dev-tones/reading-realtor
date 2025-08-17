@@ -2,7 +2,7 @@
 
 // page.tsx - Realtor Landing Page
 
-
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { TestimonialCard, testimonials } from './components/TestimonialCard';
 import { PropertyCard, featuredProperties } from './components/PropertyCard';
@@ -88,8 +88,7 @@ export default function RealtorLandingPage() {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                With over 15 years of experience in luxury real estate, I help clients find their perfect home 
-                and maximize their property investments in today's dynamic market.
+                {"With over 15 years of experience in luxury real estate, I help clients find their perfect home and maximize their property investments in today\'s dynamic market."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
@@ -104,7 +103,7 @@ export default function RealtorLandingPage() {
             
             <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="relative">
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600" 
                   alt="Luxury Home"
                   className="rounded-3xl shadow-2xl"
@@ -146,8 +145,8 @@ export default function RealtorLandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                // src=""
+              <Image
+                src=""
                 alt="Jennifer Twigg"
                 className="rounded-3xl shadow-2xl"
               />
@@ -157,8 +156,7 @@ export default function RealtorLandingPage() {
                 Meet Jennifer Twigg
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                As a top-performing realtor with over 15 years in luxury real estate, I've built my reputation 
-                on trust, expertise, and delivering exceptional results for my clients.
+                {"As a top-performing realtor with over 15 years in luxury real estate, I\'ve built my reputation on trust, expertise, and delivering exceptional results for my clients."}
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
@@ -235,7 +233,7 @@ export default function RealtorLandingPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-lg opacity-90 max-w-2xl mx-auto">
-              Let's discuss your real estate goals and find the perfect solution for you.
+              {"Let\'s discuss your real estate goals and find the perfect solution for you."}
             </p>
           </div>
           
